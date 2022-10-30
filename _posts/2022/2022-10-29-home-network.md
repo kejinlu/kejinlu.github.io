@@ -67,7 +67,7 @@ Unifi的AP应该都是胖瘦一体的AP，支持软AC，也支持脱离AC独立�
 因为NAS中的机械硬盘对突然掉电比较敏感，容器损坏硬盘影响硬盘寿命，所以一般情况下NAS最好都配一个UPS，这边用的是APC的BK650M2-CH，可以和NAS搭配工作，当断电后，NAS会接收到UPS的通知，然后进行关机保护，NAS和主交换机通过两根网线进行链路聚合，提高带宽。另外NAS下面可以放减震垫，毕竟4个硬盘同时工作多多少少有些震动的😂。
 软路由则安装了PVE，然后PVE中安装各种需要的虚拟机，比如用于部署各种Docker的RancherOS系统，作为旁路由角色的OpenWRT，用于管理智能家居的Home Assistant OS。
 
-<img width="80%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1661952712303-7dec49dc-ca7c-44a1-a6b1-754913302822.png#clientId=u9290e070-0038-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=276&id=u084ec47c&margin=%5Bobject%20Object%5D&originHeight=552&originWidth=402&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue89826ef-a9fe-452d-a0cd-b5ea8c07e95&title=&width=201">
+<img width="20%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1661952712303-7dec49dc-ca7c-44a1-a6b1-754913302822.png#clientId=u9290e070-0038-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=276&id=u084ec47c&margin=%5Bobject%20Object%5D&originHeight=552&originWidth=402&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue89826ef-a9fe-452d-a0cd-b5ea8c07e95&title=&width=201">
 
 ### **二楼中继弱电箱**
 
@@ -110,7 +110,7 @@ AP算是日常使用用比较核心的设备了，毕竟现在很多设备都是
 
 **入户** Frontyard(UAP-AC-Lite)  这边是通过USW Flex交换机（放在摄像头上方的防水盒内），来同时对摄像头和AP供电，而USW Flex自身也是通过POE（af，at或者bt）进行供电的，这种模式用在户外一分多的情况下很方便，避免了电源线的布置，只需要一根网线即可搞定多个设备的网络和供电。
 
-<img width="80%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1661952713850-546f02ab-195d-4c56-a085-04a613dce58b.png#clientId=u9290e070-0038-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=300&id=ub3cfea0f&margin=%5Bobject%20Object%5D&originHeight=600&originWidth=600&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud05536be-957f-4b39-83ad-fb13f9672ff&title=&width=300">
+<img width="30%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1661952713850-546f02ab-195d-4c56-a085-04a613dce58b.png#clientId=u9290e070-0038-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=300&id=ub3cfea0f&margin=%5Bobject%20Object%5D&originHeight=600&originWidth=600&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud05536be-957f-4b39-83ad-fb13f9672ff&title=&width=300">
 
 <img width="80%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/jpeg/328998/1661952713845-95b116a2-a929-430f-9110-95df296b2160.jpeg#clientId=u9290e070-0038-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=334&id=u3675e3c9&margin=%5Bobject%20Object%5D&originHeight=667&originWidth=1000&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud633df13-1244-46d3-9745-be59ad21d29&title=&width=500">
 
