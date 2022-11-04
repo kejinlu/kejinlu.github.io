@@ -17,7 +17,8 @@ tags:
 
 <img width="50%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/jpeg/328998/1665892207477-41f3e260-5b2f-4b63-af00-7db736f00e69.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_26%2Ctext_5Y2i5YWL%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_900%2Climit_0">
 
-室外机通过两根线连接线控，一台主机最多可以连三个控制器，方便你在厨房或者浴室（需要提前布线）进行控制。
+室外机通过两根线连接线控，有一些燃气热水器可以支持同时连接多个线控，我的这台经过测试只能连接一个线控，多个线控连接之后，时间长了线控会出现异常，影响燃气热水器的使用。
+
 能率官方在国外推出了Wi-Fi版的控制器，NWC Adapter，不过国内没有销售，也不知道和国内销售的机型能不能适配，而且动辄四五百元人民币的价格也是相当的惊人，另外需要使用官方自己的App进行控制，无法接入Home Assistant系统。
 所以我就寻思能不能对原装线控做一些DIY改造，读取相关的状态信息或者写入相关控制信号来达到目的。
 虽然对数字电路一窍不通，但是心想多多少少有编程基础，数字电路相关的东西，不管是软件还是硬件，到了最底层都是0101，低电平高电平的序列，很多思想都是相通的。所以这次趁着国庆假期就着手对线控电路板做了一通研究，当然一开始并没有抱太大的希望。
@@ -141,7 +142,7 @@ PCB反面可以看到很多圆形的金属点，这种应该是用于PCB自动�
 ### 3.2 电路设计及实现
 [https://oshwhub.com/kejinlu/noritz-controller](https://oshwhub.com/kejinlu/noritz-controller) 
 
-<img width="60%"  loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1666017834567-efd12e3c-4289-4cee-9c20-df5d73da8c35.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Y2i5YWL%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" />
+<img width="60%"  loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/png/328998/1667562522079-13de3709-64e5-4311-afca-b8dc20a120bd.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5Y2i5YWL%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" />
 
 这里我使用的是ESP32-DevKitC 如果你有别的基于ESP32的或者ESP8266的也应该都可以。
 关于此电路设计有几个注意点：
@@ -151,8 +152,7 @@ PCB反面可以看到很多圆形的金属点，这种应该是用于PCB自动�
    - 信号输出端叫做TX（Transport），这里TX其实并是不普通意义上的信息输出，只是控制和GND的通断
 - ESP32-DevKitC 开发板
    - 必须和线控共地，也就是线控板的GND需要接到ESP32的GND端。
-   -  供电，如果从控制板取电可能会影响到控制器的运行。为了稳定性强烈建议开发版使用USB单独供电。
-   - 可以使用线控板的5V来供电，如果出现不稳定的情况或者为了安全考虑也可以独立usb供电。
+   -  供电，开发版使用USB单独供电，经过测试如果从线控板的5v供电的话会影响线控的正常运行。
    - GPIO34，35引脚是input only的，所以 输出TX使用了下面的32引脚。
 - 用作TX开关控制的三极管
    - 基极输入端注意设置下拉电阻R3，这里的下拉电阻既可以保证当GPIO32断开或者ESP32断电时候能够有确定的低电平，也可以在GPIO 32 输出高电平的时候进行分压，控制输入电压。
