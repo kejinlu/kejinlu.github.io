@@ -148,7 +148,7 @@ pre {
     margin: 0 0 24px;
 	background-color: #f3f3f3;
 }
-p {
+p code {
     font-family: monospace;
     font-size: 14px;
     border: 1px solid #edebea;
