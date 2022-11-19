@@ -19,6 +19,8 @@ tags:
 
 室外机通过两根线连接线控，有一些燃气热水器可以支持同时连接多个线控，我的这台经过测试只能连接一个线控，多个线控连接之后，时间长了线控会出现异常，影响燃气热水器的使用。
 
+<img width="50%" loading="lazy" referrerpolicy="no-referrer" rel="noreferrer" src="https://cdn.nlark.com/yuque/0/2022/jpeg/328998/1668845283871-8856a4c4-2af3-4114-8288-33da6fc109e1.jpeg?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_34%2Ctext_5Y2i5YWL%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10%2Fresize%2Cw_900%2Climit_0%2Finterlace%2C1">
+
 能率官方在国外推出了Wi-Fi版的控制器，NWC Adapter，不过国内没有销售，也不知道和国内销售的机型能不能适配，而且动辄四五百元人民币的价格也是相当的惊人，另外需要使用官方自己的App进行控制，无法接入Home Assistant系统。
 所以我就寻思能不能对原装线控做一些DIY改造，读取相关的状态信息或者写入相关控制信号来达到目的。
 虽然对数字电路一窍不通，但是心想多多少少有编程基础，数字电路相关的东西，不管是软件还是硬件，到了最底层都是0101，低电平高电平的序列，很多思想都是相通的。所以这次趁着国庆假期就着手对线控电路板做了一通研究，当然一开始并没有抱太大的希望。
