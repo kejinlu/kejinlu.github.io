@@ -243,7 +243,7 @@ background: #83BF73;
 
 sticky{
     display:block;
-    border-top: 1px dashed #CCC;
+    border-bottom: 1px dashed #CCC;
 }
 
 footer{
