@@ -4,6 +4,14 @@ layout: page
 ---
 
 <ul class="listing">
+    {% if paginator.page == 1 %}
+    {% for post in site.categories.sticky %}
+    {% assign content = post.content %}
+    <article>
+      {{ content }}
+    </article>
+    {% endfor %}
+  {% endif %}
 {% for post in paginator.posts %}
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
   {% if year != y %}
