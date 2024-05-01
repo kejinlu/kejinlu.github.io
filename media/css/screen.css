@@ -241,6 +241,11 @@ background: #83BF73;
     border-top: 1px dashed #CCC;
 }
 
+sticky{
+    display:block;
+    border-top: 1px dashed #CCC;
+}
+
 footer{
 display:block;
 border-top: 1px dashed #CCC;
