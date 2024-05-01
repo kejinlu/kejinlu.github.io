@@ -1,6 +1,6 @@
 permalink: /:year/:month/:title/
 url: http://kejinlu.com
-author: 卢克
+author: kejinlu
 highlighter: rouge
 timezone: Asia/Shanghai
 gems: [jekyll-paginate]
