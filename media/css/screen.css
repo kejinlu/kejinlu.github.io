@@ -244,6 +244,7 @@ background: #83BF73;
 sticky{
     display:block;
     border-bottom: 1px dashed #CCC;
+    margin-bottom: 4px;
 }
 
 footer{
